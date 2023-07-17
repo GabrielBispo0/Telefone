@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+<meta name="viewport" charset="UTF-8"
+	content="width=device-width, initial-scale=1.0" />
+
+<title>Bc Tel</title>
+</head>
+<body>
+	<header>
+
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#" class="brand-logo ">Lista de chamadas</a>
+				  <ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="/cadastrarProduto"
+						class="waves-effect waves-light btn"><i
+							class="material-icons left">add_circle_outline</i>Cadastrar Chamada</a></li>
+
+				</ul>
+			</div>
+		</nav>
+
+	</header>
+
+	<div align="center">
+
+		
+
+
+
+		<table class="container">
+			<thead>
+				<tr>
+
+
+					<th>Origem</th>
+					<th>Destino</th>
+					<th>Tempo</th>
+					<th>Plano faleMais</th>
+					<th>Sem Promoção</th>
+					<th>Com Promoção</th>
+
+				</tr>
+			</thead>
+			<tbody>
+
+				<tr th:each="produto : ${produtos}">
+
+					<td th:text="${produto.origem}">Origem</td>
+					<td th:text="${produto.destino}">Destino</td>
+					<td th:text="${produto.tempo}">Tempo</td>
+					<td th:text="${produto.plano}">Plano faleMais</td>
+					<td th:text="${produto.semPromocao}">Plano Sem faleMais</td>
+					<td th:text="${produto.comPromocao}">Plano Com faleMais</td>
+
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+</body>
+
+</html>
